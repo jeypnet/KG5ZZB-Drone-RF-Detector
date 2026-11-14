@@ -50,7 +50,7 @@ It is **receive-only**: it never transmits, jams or interferes with anything.
 - **AI briefing (optional):** with an Anthropic API key, Claude writes a short briefing for a security supervisor from the incident summary. No radio data is sent. The key is stored encrypted for the Windows user (DPAPI).
 
 ### 🎬 Try it without hardware
-**Try the demo** (or start with `--demo`) runs a simulated site: LoRaWAN sensors, a Meshtastic node, an industrial hopping radio, utility meters and a 433 MHz weather sensor. After 25 seconds a drone arrives with a LoRa 500 kHz control link, an FSK telemetry radio and a Remote ID broadcast, circling about 1 km away.
+**Try the demo** (or start with `--demo`) plays a built-in site scenario: LoRaWAN sensors, a Meshtastic node, an industrial hopping radio, utility meters and a 433 MHz weather sensor. After 25 seconds a drone arrives with a LoRa 500 kHz control link, an FSK telemetry radio and a Remote ID broadcast, circling about 1 km away.
 
 ---
 
@@ -58,7 +58,7 @@ It is **receive-only**: it never transmits, jams or interferes with anything.
 
 ```
 DatasetGen (C#)            train.py (Python, PyTorch)              App (C#, ONNX Runtime)
-render synthetic RF  ->    standardise 8 features                  embedded burst_classifier.onnx
+render training RF   ->    standardise 8 features                  embedded burst_classifier.onnx
 run the app's real   ->    8 -> 32 -> 32 -> 5 MLP, class weights   CPU inference, microseconds per burst
 burst detector             early stopping, held-out test set  ->   export ONNX + model card
 ```
@@ -74,11 +74,11 @@ burst detector             early stopping, held-out test set  ->   export ONNX +
 | Hardware | P/Invoke bindings to librtlsdr, async streaming, retune with stale-buffer discard, USB error retries |
 | Sweep | Tunes across the band, collects 150 ms dwells, runs the pipeline per dwell |
 | DSP | Short-time FFT, noise floor, thresholding, connected components, burst features |
-| Machine learning | Synthetic data pipeline, PyTorch training, ONNX export, ONNX Runtime inference, rule baseline |
+| Machine learning | Training-data pipeline, PyTorch training, ONNX export, ONNX Runtime inference, rule baseline |
 | Decision | Sliding window, frequency-hopping test, site baseline, CLEAR / WATCH / ALERT |
 | Remote ID | ASTM F3411 decoder, tracker, Windows Bluetooth LE watcher |
 | Incidents | Incident lifecycle, JSON Lines log, CSV/JSON export, template report, optional Claude briefing |
-| Simulation | LoRa / FSK / OOK signal synthesis, demo scenario, simulated dongle |
+| Demo engine | LoRa / FSK / OOK signal generation, demo scenario, demo dongle |
 | UI | WPF: verdict banner, full-band waterfall with classified ticks, Remote ID radar plot, tables |
 
 ## Requirements

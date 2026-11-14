@@ -7,7 +7,7 @@ neural network decides which of 5 signal classes the burst belongs to. It runs o
 inside the app (ONNX Runtime), takes microseconds per burst, and needs no internet.
 
 ## Data
-- **Source:** a C# dataset generator renders synthetic transmissions into 60 ms captures at
+- **Source:** a C# dataset generator renders training transmissions into 60 ms captures at
   2.4 MS/s with white noise, then runs the app's own spectrogram + burst detector on them,
   so the network learns from the same measurements it sees live.
 - **Training set:** seed 1, 35603 bursts (30263 train / 5340 validation for early stopping).
