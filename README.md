@@ -2,6 +2,8 @@
 
 ![Drone RF Detector: passive counter-drone detection with software-defined radio and a neural network](docs/cover.png)
 
+[![Connect on LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge)](https://www.linkedin.com/in/jeypnet/)
+
 <img src="docs/icon.png" width="96" align="right" alt="App icon: a drone on radar rings">
 
 **Passive drone detection for Windows with a low-cost RTL-SDR: a neural network classifies 900 MHz radio bursts in real time, and FAA Remote ID broadcasts are decoded over Bluetooth.**
@@ -107,6 +109,9 @@ Direction finding (pointing at the drone) would need several phase-coherent rece
 ## Source code
 This repository is the public showcase: description, results, model card and images.
 The source code is private. Technical walkthroughs are available on request.
+
+## Contact
+Into ham radio, RF, SDR or aviation? **[Let's connect on LinkedIn](https://www.linkedin.com/in/jeypnet/)**. I share new radio apps, RF projects and what I learn along the way.
 
 ## License
 Copyright (c) 2026 KG5ZZB. All rights reserved. Text and images may not be reused without permission.
